@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -38,6 +39,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          glow: "hsl(var(--accent-glow))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -57,6 +59,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-accent': 'var(--gradient-accent)',
+        'gradient-background': 'var(--gradient-background)',
+      },
+      boxShadow: {
+        'primary': 'var(--shadow-primary)',
+        'accent': 'var(--shadow-accent)',
+        'glow': 'var(--shadow-glow)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +92,64 @@ export default {
             height: "0",
           },
         },
+        glow: {
+          from: { 
+            boxShadow: "var(--shadow-accent)",
+          },
+          to: { 
+            boxShadow: "var(--shadow-glow)",
+          },
+        },
+        bounce: {
+          "0%, 20%, 50%, 80%, 100%": { 
+            transform: "translateY(0)",
+          },
+          "40%": { 
+            transform: "translateY(-5px)",
+          },
+          "60%": { 
+            transform: "translateY(-3px)",
+          },
+        },
+        fadeIn: {
+          from: { 
+            opacity: "0", 
+            transform: "translateY(30px)",
+          },
+          to: { 
+            opacity: "1", 
+            transform: "translateY(0)",
+          },
+        },
+        slideIn: {
+          from: { 
+            opacity: "0", 
+            transform: "translateX(30px)",
+          },
+          to: { 
+            opacity: "1", 
+            transform: "translateX(0)",
+          },
+        },
+        typing: {
+          "0%, 80%, 100%": { 
+            transform: "scale(0)", 
+            opacity: "0.5",
+          },
+          "40%": { 
+            transform: "scale(1)", 
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        glow: "glow 3s ease-in-out infinite alternate",
+        bounce: "bounce 2s infinite",
+        fadeIn: "fadeIn 0.6s ease",
+        slideIn: "slideIn 0.4s ease",
+        typing: "typing 1.4s infinite ease-in-out",
       },
     },
   },
